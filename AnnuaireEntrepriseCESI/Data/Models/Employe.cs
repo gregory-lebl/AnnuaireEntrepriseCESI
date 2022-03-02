@@ -25,9 +25,7 @@ namespace AnnuaireEntrepriseCESI.Data.Models
 
         [DefaultValue(false)]
         public string Role { get; set; }
-        public int IdService { get; set; }
         public virtual Service Service { get; set; }
-        public int IdSite { get; set; }
         public  virtual Site Site { get; set; }
     }
 }
