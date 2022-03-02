@@ -16,6 +16,8 @@ namespace AnnuaireEntrepriseCESI.Data
 
         #region DbSet
         public DbSet<Employe> Employe { get; set; }
+        public DbSet<Service> Service { get; set; }
+        public DbSet<Site> Site { get; set; }
         #endregion
 
         #region DatabaseConfiguration
