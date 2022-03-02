@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Data\ReturnModels\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>

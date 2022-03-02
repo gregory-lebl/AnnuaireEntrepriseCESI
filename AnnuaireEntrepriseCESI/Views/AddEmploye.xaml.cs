@@ -1,5 +1,4 @@
-﻿using AnnuaireEntrepriseCESI.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AnnuaireEntrepriseCESI
+namespace AnnuaireEntrepriseCESI.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour AddEmploye.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddEmploye : Window
     {
-        public MainWindow()
+        public AddEmploye()
         {
             InitializeComponent();
-        }
-
-        private void AddEmployBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new AddEmploye();
-            window.Show();
         }
     }
 }

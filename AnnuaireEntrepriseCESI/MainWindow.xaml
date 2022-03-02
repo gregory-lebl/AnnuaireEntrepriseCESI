@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:AnnuaireEntrepriseCESI"
         mc:Ignorable="d"
         Title="Annuaire d'entreprise" Height="900" Width="1600">
-    <Grid>
-
-    </Grid>
+    <Button x:Name="AddEmployBtn" Content="Ajouter un employé" HorizontalAlignment="Left" Margin="366,539,0,0" VerticalAlignment="Top" Height="23" Width="73" Click="AddEmployBtn_Click"/>
 </Window>
