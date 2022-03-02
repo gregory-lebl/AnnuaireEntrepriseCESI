@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnnuaireEntrepriseCESI.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,38 @@ namespace AnnuaireEntrepriseCESI.Views
     /// </summary>
     public partial class AddEmploye : Window
     {
+
+        private readonly AnnuaireEntrepriseDbContext context = new AnnuaireEntrepriseDbContext();
         public AddEmploye()
         {
             InitializeComponent();
+            BindingServices();
+            BindingSite();
+        }
+        /// <summary>
+        /// Permet d'afficher un sélecteur avec l'ensemble des Services
+        /// </summary>
+        public void BindingServices()
+        {
+            if (context.Database.EnsureCreated())
+            {
+                ServiceSelector.ItemsSource = context.Service.ToList();
+            }
+        }
+        /// <summary>
+        /// Permet d'afficher un sélecteur avec l'ensemble des Services
+        /// </summary>
+        public void BindingSite()
+        {
+            if (context.Database.EnsureCreated())
+            {
+                SiteSelector.ItemsSource = context.Site.ToList();
+            }
+        }
+
+        private void SubmitEmploye_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
