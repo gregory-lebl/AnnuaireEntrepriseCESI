@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AnnuaireEntrepriseCESI.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AnnuaireEntrepriseCESI.Data
 {
@@ -14,14 +15,14 @@ namespace AnnuaireEntrepriseCESI.Data
 
 
         #region DbSet
-        // Créer les DbSet quand les models seront créés
+        public DbSet<Employe> Employe { get; set; }
         #endregion
 
         #region DatabaseConfiguration
         // Définir la configuration de la base de données
         public static string GetConnectionString()
         {
-            return "Server=(localdb)\\MSSQLLocalDB;Database=StiveDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            return "Server=(localdb)\\MSSQLLocalDB;Database=AnnuaireEntreprise;Trusted_Connection=True;MultipleActiveResultSets=true";
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
