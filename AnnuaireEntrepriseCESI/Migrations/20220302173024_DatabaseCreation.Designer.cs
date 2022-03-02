@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnnuaireEntrepriseCESI.Migrations
 {
     [DbContext(typeof(AnnuaireEntrepriseDbContext))]
-    [Migration("20220302172130_CreationDatabase")]
-    partial class CreationDatabase
+    [Migration("20220302173024_DatabaseCreation")]
+    partial class DatabaseCreation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,12 +46,6 @@ namespace AnnuaireEntrepriseCESI.Migrations
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
-
-                    b.Property<int>("IdService")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdSite")
-                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
                         .IsRequired()

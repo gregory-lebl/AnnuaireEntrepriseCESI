@@ -45,12 +45,6 @@ namespace AnnuaireEntrepriseCESI.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int>("IdService")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdSite")
-                        .HasColumnType("int");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(255)
