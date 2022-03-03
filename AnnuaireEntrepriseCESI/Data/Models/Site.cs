@@ -8,10 +8,13 @@ namespace AnnuaireEntrepriseCESI.Data.Models
         public Guid Id { get; set; }
         [Required]
         public string Name { get; set; }
-        public Site(string name)
+        [Required]
+        public string Description { get; set; }
+        public Site(string name, string description)
         {
             Id = new Guid();
             Name = name;
+            Description = description;
         }
     }
 }
