@@ -1,5 +1,7 @@
 ﻿using AnnuaireEntrepriseCESI.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 
 namespace AnnuaireEntrepriseCESI.Data
 {
@@ -39,5 +41,27 @@ namespace AnnuaireEntrepriseCESI.Data
             base.OnConfiguring(optionsBuilder);
         }
         #endregion
+        #region Seeder
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            var sites = SeedSite();
+            modelBuilder.Entity<Site>().HasData(sites);
+        }
+
+        private static List<Site> SeedSite()
+        {
+            return new List<Site>
+            {
+                new Site("Paris","Site administratif"),
+                new Site("Nantes","Site de Production"),
+                new Site("Toulouse","Site de Production"),
+                new Site("Nice","Site de Production"),
+                new Site("Lille","Site de Production"),
+            };
+        }
+
+        #endregion
+
     }
 }

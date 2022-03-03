@@ -12,7 +12,7 @@ namespace AnnuaireEntrepriseCESI.Data.Models
         public string Description { get; set; }
         public Site(string name, string description)
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Name = name;
             Description = description;
         }

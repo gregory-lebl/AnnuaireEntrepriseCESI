@@ -25,13 +25,12 @@ namespace AnnuaireEntrepriseCESI.Data.Models
 
         [DefaultValue(false)]
         public string Role { get; set; }
-        
-        public virtual Service Service { get; set; }
-        public Guid ServiceForeignKey { get; set; }
-        public  virtual Site Site { get; set; }
-        public Guid SiteForeignKey { get; set; }
+        [Required]
+        public Guid ServiceId { get; set; }
+        [Required]
+        public Guid SiteId { get; set; }
 
-        public Employe(string firstName, string lastName, string cellPhoneNumber, string fixePhoneNumber, string email, string role, Service service, Site site)
+        public Employe(string firstName, string lastName, string cellPhoneNumber, string fixePhoneNumber, string email, string role, Guid serviceId, Guid siteId)
         {
             Id = new Guid();
             FirstName = firstName;
@@ -40,8 +39,8 @@ namespace AnnuaireEntrepriseCESI.Data.Models
             FixePhoneNumber = fixePhoneNumber;
             Email = email;
             Role = role;
-            Service = service;
-            Site = site;
+            ServiceId = serviceId;
+            SiteId = siteId;
         }
     }
 }
