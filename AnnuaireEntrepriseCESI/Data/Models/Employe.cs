@@ -25,8 +25,11 @@ namespace AnnuaireEntrepriseCESI.Data.Models
 
         [DefaultValue(false)]
         public string Role { get; set; }
+        
         public virtual Service Service { get; set; }
+        public Guid ServiceForeignKey { get; set; }
         public  virtual Site Site { get; set; }
+        public Guid SiteForeignKey { get; set; }
 
         public Employe(string firstName, string lastName, string cellPhoneNumber, string fixePhoneNumber, string email, string role, Service service, Site site)
         {
