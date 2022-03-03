@@ -39,9 +39,5 @@ namespace AnnuaireEntrepriseCESI.Data
             base.OnConfiguring(optionsBuilder);
         }
         #endregion
-
-        #region Seeder
-        // Insérer des fausses données
-        #endregion
     }
 }
