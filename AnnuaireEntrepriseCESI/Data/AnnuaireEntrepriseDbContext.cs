@@ -19,6 +19,7 @@ namespace AnnuaireEntrepriseCESI.Data
         public DbSet<Employe> Employe { get; set; }
         public DbSet<Service> Service { get; set; }
         public DbSet<Site> Site { get; set; }
+        public DbSet<Admin> Admin { get; set; }
         #endregion
 
         #region DatabaseConfiguration
@@ -49,6 +50,9 @@ namespace AnnuaireEntrepriseCESI.Data
 
             var services = SeedService();
             modelBuilder.Entity<Service>().HasData(services);
+
+            var admin = SeedAdmin();
+            modelBuilder.Entity<Admin>().HasData(admin);
         }
 
         /// <summary>
@@ -83,6 +87,11 @@ namespace AnnuaireEntrepriseCESI.Data
                 new Service("Service Achat"),
                 new Service("Service Juridique")
             };
+        }
+
+        private static Admin SeedAdmin()
+        {
+            return new Admin("admin@admin.fr", "admin");
         }
 
         #endregion

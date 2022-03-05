@@ -1,0 +1,16 @@
+﻿<Window x:Class="AnnuaireEntrepriseCESI.Views.AdminAuthentification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnnuaireEntrepriseCESI.Views"
+        mc:Ignorable="d"
+        Title="Connexion à l'espace d'administration" Height="450" Width="449">
+
+    <Grid>
+        <Label Content="Utilisateur" HorizontalAlignment="Center" Margin="0,123,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AdminUser"  HorizontalAlignment="Center" Margin="0,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Mot de pass" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="AdminPassword" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>

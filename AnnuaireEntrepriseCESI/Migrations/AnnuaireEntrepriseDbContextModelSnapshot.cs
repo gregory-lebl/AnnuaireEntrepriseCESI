@@ -19,7 +19,34 @@ namespace AnnuaireEntrepriseCESI.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AnnuaireEntrepriseCESI.Data.Models.Employe", b =>
+            modelBuilder.Entity("AnnuaireEntrepriseCESI.Data.StorageModels.Admin", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admin");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("45051e65-b01e-4bad-86ac-3faacae2f169"),
+                            Email = "admin@admin.fr",
+                            Password = "admin"
+                        });
+                });
+
+            modelBuilder.Entity("AnnuaireEntrepriseCESI.Data.StorageModels.Employe", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +86,7 @@ namespace AnnuaireEntrepriseCESI.Migrations
                     b.ToTable("Employe");
                 });
 
-            modelBuilder.Entity("AnnuaireEntrepriseCESI.Data.Models.Service", b =>
+            modelBuilder.Entity("AnnuaireEntrepriseCESI.Data.StorageModels.Service", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,42 +103,42 @@ namespace AnnuaireEntrepriseCESI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b0783421-5fb5-4ddc-885c-ca0f742fe935"),
+                            Id = new Guid("58b4fe53-07e6-4aca-88d0-397c53437b8f"),
                             Name = "Service Commercial"
                         },
                         new
                         {
-                            Id = new Guid("10fedbdd-d5dc-45d8-a06b-2248cd1561ee"),
+                            Id = new Guid("8b1a0e4e-f717-4cb2-800c-754898c46613"),
                             Name = "Service Marketing"
                         },
                         new
                         {
-                            Id = new Guid("f55331d9-e339-4284-9c3d-3aff6426350c"),
+                            Id = new Guid("4d7e2128-d65e-4779-8e11-5732bfda5360"),
                             Name = "Service Financier"
                         },
                         new
                         {
-                            Id = new Guid("301559aa-5be0-4e69-a2b9-8351c4c7f78c"),
+                            Id = new Guid("7ea5908a-d46f-4ea3-9d3e-0d9f91ade42f"),
                             Name = "Service Industriel"
                         },
                         new
                         {
-                            Id = new Guid("844e8223-7d2d-4988-b822-07de7f175a8a"),
+                            Id = new Guid("342b1f79-7c1c-4013-bf3c-e522cc79127f"),
                             Name = "Service Ressources Humaines"
                         },
                         new
                         {
-                            Id = new Guid("b2a5afc3-266c-4794-8330-90de21522752"),
+                            Id = new Guid("9ea93130-81f2-499f-81c0-eb72223ae60d"),
                             Name = "Service Achat"
                         },
                         new
                         {
-                            Id = new Guid("aef43467-ff56-4749-bedc-b6c2237e78cc"),
+                            Id = new Guid("1da8e146-9766-4c2b-89cf-0a6829d39d65"),
                             Name = "Service Juridique"
                         });
                 });
 
-            modelBuilder.Entity("AnnuaireEntrepriseCESI.Data.Models.Site", b =>
+            modelBuilder.Entity("AnnuaireEntrepriseCESI.Data.StorageModels.Site", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,31 +159,31 @@ namespace AnnuaireEntrepriseCESI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("26419f39-6a27-4054-9630-6f97cb96faa8"),
+                            Id = new Guid("eb83b75f-1718-4b8b-9349-59d842193d4e"),
                             Description = "Site administratif",
                             Name = "Paris"
                         },
                         new
                         {
-                            Id = new Guid("652bb15d-d7ea-499d-9db7-bc4014443d43"),
+                            Id = new Guid("80985050-0606-4ea9-b4ff-4655084595d8"),
                             Description = "Site de Production",
                             Name = "Nantes"
                         },
                         new
                         {
-                            Id = new Guid("e94d1274-3330-4f50-bab6-c99d142d0c04"),
+                            Id = new Guid("56aabeb2-5dd1-45e6-ba18-f5288d19a5ed"),
                             Description = "Site de Production",
                             Name = "Toulouse"
                         },
                         new
                         {
-                            Id = new Guid("f2230f4c-ac4e-490d-b70a-0bc69974a47f"),
+                            Id = new Guid("83033ef1-6f0e-4349-aa03-a1f03df04f2f"),
                             Description = "Site de Production",
                             Name = "Nice"
                         },
                         new
                         {
-                            Id = new Guid("526a9408-c1cc-499e-ab0d-a9379556216d"),
+                            Id = new Guid("1498df82-8668-4c10-92dc-2f3010fefe5e"),
                             Description = "Site de Production",
                             Name = "Lille"
                         });

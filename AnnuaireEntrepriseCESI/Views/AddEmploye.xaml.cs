@@ -44,7 +44,7 @@ namespace AnnuaireEntrepriseCESI.Views
                     InputCellPhoneNumber.Text,
                     InputFixePhoneNumber.Text,
                     InputEmail.Text,
-                    "Visiteur",
+                    "Administrateur",
                     serviceId,
                     siteId);
 
