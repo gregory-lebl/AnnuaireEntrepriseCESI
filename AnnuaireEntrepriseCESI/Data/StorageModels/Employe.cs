@@ -1,29 +1,21 @@
 ﻿using System;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AnnuaireEntrepriseCESI.Data.Models
+namespace AnnuaireEntrepriseCESI.Data.StorageModels
 {
     public class Employe
     {
         public Guid Id { get; set; }
         [Required]
-        [MaxLength(255)]
         public string FirstName { get; set; }
         [Required]
-        [MaxLength(255)]
         public string LastName { get; set; }
         [Required]
-        [MaxLength(10)]
         public string CellPhoneNumber { get; set; }
         [Required]
-        [MaxLength(10)]
         public string FixePhoneNumber { get; set; }
         [Required]
-        [MaxLength(500)]
         public string Email { get; set; }
-
-        [DefaultValue(false)]
         public string Role { get; set; }
         [Required]
         public Guid ServiceId { get; set; }
@@ -32,7 +24,7 @@ namespace AnnuaireEntrepriseCESI.Data.Models
 
         public Employe(string firstName, string lastName, string cellPhoneNumber, string fixePhoneNumber, string email, string role, Guid serviceId, Guid siteId)
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             FirstName = firstName;
             LastName = lastName;
             CellPhoneNumber = cellPhoneNumber;

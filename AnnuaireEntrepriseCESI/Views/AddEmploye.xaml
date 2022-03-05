@@ -8,13 +8,21 @@
         Title="AddEmploye" Height="450" Width="800">
 
     <Grid>
-        <Label  Content="Prénom" HorizontalAlignment="Left" Margin="108,159,0,0" VerticalAlignment="Top"/>
-        <Label  Content="Nom" HorizontalAlignment="Left" Margin="315,159,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="FirstName" TextWrapping="Wrap" Width="120" Margin="108,185,572,222"/>
-        <TextBox x:Name="LastName" TextWrapping="Wrap" Width="120" Margin="315,185,365,222"/>
-        <Button x:Name="SubmitEmploye" Content="Enregistrer" HorizontalAlignment="Left" Margin="228,342,0,0" VerticalAlignment="Top" Click="SubmitEmploye_Click"/>
-        <ComboBox x:Name="ServiceSelector" HorizontalAlignment="Left" Margin="213,226,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="SiteSelector" HorizontalAlignment="Left" Margin="213,282,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label  Content="Prénom" HorizontalAlignment="Left" Margin="81,70,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Nom" HorizontalAlignment="Left" Margin="253,70,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SubmitEmploye" Content="Enregistrer" HorizontalAlignment="Center" Margin="0,342,0,0" VerticalAlignment="Top" Click="SubmitEmploye_Click"/>
+        <TextBox x:Name="InputFirstName" HorizontalAlignment="Left" Margin="81,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="InputLastName" HorizontalAlignment="Left" Margin="253,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label  Content="Téléphone Portable" HorizontalAlignment="Left" Margin="400,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="InputCellPhoneNumber" HorizontalAlignment="Left" Margin="400,96,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label  Content="Téléphone Fixe" HorizontalAlignment="Left" Margin="543,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="InputFixePhoneNumber" HorizontalAlignment="Left" Margin="543,96,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label  Content="Adresse mail" HorizontalAlignment="Left" Margin="81,123,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="InputEmail" HorizontalAlignment="Left" Margin="81,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label  Content="A quel service l'employé est-il rattaché ?" HorizontalAlignment="Left" Margin="294,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,1.157"/>
+        <ComboBox x:Name="ServiceSelector" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" Width="200" DisplayMemberPath="Name" SelectedValue="Id"/>
+        <Label  Content="A quel site l'employé est-il rattaché ?" HorizontalAlignment="Left" Margin="300,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,1.157"/>
+        <ComboBox x:Name="SiteSelector" HorizontalAlignment="Center" Margin="0,267,0,0" VerticalAlignment="Top" Width="200" DisplayMemberPath="Name" SelectedValue="Id"/>
 
     </Grid>
 </Window>

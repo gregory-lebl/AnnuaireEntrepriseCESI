@@ -4,14 +4,16 @@ using AnnuaireEntrepriseCESI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AnnuaireEntrepriseCESI.Migrations
 {
     [DbContext(typeof(AnnuaireEntrepriseDbContext))]
-    partial class AnnuaireEntrepriseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220305151027_InsertSeedService")]
+    partial class InsertSeedService
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,23 +29,28 @@ namespace AnnuaireEntrepriseCESI.Migrations
 
                     b.Property<string>("CellPhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("FixePhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
@@ -76,37 +83,37 @@ namespace AnnuaireEntrepriseCESI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b0783421-5fb5-4ddc-885c-ca0f742fe935"),
+                            Id = new Guid("bdc32c8b-336d-4056-b526-d5abb7c8f7da"),
                             Name = "Service Commercial"
                         },
                         new
                         {
-                            Id = new Guid("10fedbdd-d5dc-45d8-a06b-2248cd1561ee"),
+                            Id = new Guid("d4801915-8a73-4093-9570-ce0f29ebafd2"),
                             Name = "Service Marketing"
                         },
                         new
                         {
-                            Id = new Guid("f55331d9-e339-4284-9c3d-3aff6426350c"),
+                            Id = new Guid("44f46e77-ad56-4b38-a4eb-7c48a111cef3"),
                             Name = "Service Financier"
                         },
                         new
                         {
-                            Id = new Guid("301559aa-5be0-4e69-a2b9-8351c4c7f78c"),
+                            Id = new Guid("e87bd3af-26ee-4ccd-9919-ad0795a4ddbd"),
                             Name = "Service Industriel"
                         },
                         new
                         {
-                            Id = new Guid("844e8223-7d2d-4988-b822-07de7f175a8a"),
+                            Id = new Guid("848b1c6c-6bed-4e43-ae08-677e95210c98"),
                             Name = "Service Ressources Humaines"
                         },
                         new
                         {
-                            Id = new Guid("b2a5afc3-266c-4794-8330-90de21522752"),
+                            Id = new Guid("f15ae25b-a93e-4ac7-8fbb-ba9e526c1bb0"),
                             Name = "Service Achat"
                         },
                         new
                         {
-                            Id = new Guid("aef43467-ff56-4749-bedc-b6c2237e78cc"),
+                            Id = new Guid("33ed3c1d-01b9-4390-8516-d2ed7e306ee9"),
                             Name = "Service Juridique"
                         });
                 });
@@ -132,31 +139,31 @@ namespace AnnuaireEntrepriseCESI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("26419f39-6a27-4054-9630-6f97cb96faa8"),
+                            Id = new Guid("d11a4470-e264-4a40-932e-8f3212dd8a54"),
                             Description = "Site administratif",
                             Name = "Paris"
                         },
                         new
                         {
-                            Id = new Guid("652bb15d-d7ea-499d-9db7-bc4014443d43"),
+                            Id = new Guid("d4b7f9d7-9559-47ad-a8ba-da5dbe72b620"),
                             Description = "Site de Production",
                             Name = "Nantes"
                         },
                         new
                         {
-                            Id = new Guid("e94d1274-3330-4f50-bab6-c99d142d0c04"),
+                            Id = new Guid("cbda5772-33de-4450-8f9d-22d2775afd6b"),
                             Description = "Site de Production",
                             Name = "Toulouse"
                         },
                         new
                         {
-                            Id = new Guid("f2230f4c-ac4e-490d-b70a-0bc69974a47f"),
+                            Id = new Guid("cd8f7cf6-900f-47cf-97ff-fdf72eaa6029"),
                             Description = "Site de Production",
                             Name = "Nice"
                         },
                         new
                         {
-                            Id = new Guid("526a9408-c1cc-499e-ab0d-a9379556216d"),
+                            Id = new Guid("9216e2ef-9dca-4a5c-960a-7986c7044fb8"),
                             Description = "Site de Production",
                             Name = "Lille"
                         });

@@ -1,17 +1,8 @@
 ﻿using AnnuaireEntrepriseCESI.Data;
+using AnnuaireEntrepriseCESI.Data.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace AnnuaireEntrepriseCESI.Views
 {
@@ -25,33 +16,44 @@ namespace AnnuaireEntrepriseCESI.Views
         public AddEmploye()
         {
             InitializeComponent();
-            BindingServices();
-            BindingSite();
-        }
-        /// <summary>
-        /// Permet d'afficher un sélecteur avec l'ensemble des Services
-        /// </summary>
-        public void BindingServices()
-        {
-            if (context.Database.EnsureCreated())
-            {
-                ServiceSelector.ItemsSource = context.Service.ToList();
-            }
-        }
-        /// <summary>
-        /// Permet d'afficher un sélecteur avec l'ensemble des Services
-        /// </summary>
-        public void BindingSite()
-        {
-            if (context.Database.EnsureCreated())
-            {
-                SiteSelector.ItemsSource = context.Site.ToList();
-            }
+            ServiceSelector.ItemsSource = context.Service.ToList();
+            SiteSelector.ItemsSource = context.Site.ToList();
         }
 
         private void SubmitEmploye_Click(object sender, RoutedEventArgs e)
         {
+            if (
+                InputFirstName.Text != null &&
+                InputLastName.Text != null &&
+                InputCellPhoneNumber.Text != null &&
+                InputFixePhoneNumber.Text != null &&
+                InputEmail.Text != null &&
+                ServiceSelector.SelectedValue.ToString() != null &&
+                SiteSelector.SelectedValue.ToString() != null
+            )
+            {
 
+                Service serviceSelector = (Service)ServiceSelector.SelectedItem;
+                Guid serviceId = serviceSelector.Id;
+
+                Site siteSelector = (Site)SiteSelector.SelectedValue;
+                Guid siteId = siteSelector.Id;
+
+                Employe addEmploye = new Employe(
+                    InputFirstName.Text, 
+                    InputLastName.Text, 
+                    InputCellPhoneNumber.Text,
+                    InputFixePhoneNumber.Text,
+                    InputEmail.Text,
+                    "Visiteur",
+                    serviceId,
+                    siteId);
+
+                context.Employe.Add(addEmploye);
+                context.SaveChanges();
+
+                MessageBox.Show("Nouvel employé créé", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

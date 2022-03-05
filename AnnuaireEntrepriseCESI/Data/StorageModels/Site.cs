@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace AnnuaireEntrepriseCESI.Data.Models
+namespace AnnuaireEntrepriseCESI.Data.StorageModels
 {
     public class Site
     {

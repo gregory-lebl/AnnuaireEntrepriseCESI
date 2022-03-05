@@ -47,8 +47,15 @@ namespace AnnuaireEntrepriseCESI.Data
             base.OnModelCreating(modelBuilder);
             var sites = SeedSite();
             modelBuilder.Entity<Site>().HasData(sites);
+
+            var services = SeedService();
+            modelBuilder.Entity<Service>().HasData(services);
         }
 
+        /// <summary>
+        /// Génère la liste des différents Sites
+        /// </summary>
+        /// <returns></returns>
         private static List<Site> SeedSite()
         {
             return new List<Site>
@@ -58,6 +65,24 @@ namespace AnnuaireEntrepriseCESI.Data
                 new Site("Toulouse","Site de Production"),
                 new Site("Nice","Site de Production"),
                 new Site("Lille","Site de Production"),
+            };
+        }
+
+        /// <summary>
+        /// Génère la liste des différents service de l'entreprise
+        /// </summary>
+        /// <returns></returns>
+        private static List<Service> SeedService()
+        {
+            return new List<Service>
+            {
+                new Service("Service Commercial"),
+                new Service("Service Marketing"),
+                new Service("Service Financier"),
+                new Service("Service Industriel"),
+                new Service("Service Ressources Humaines"),
+                new Service("Service Achat"),
+                new Service("Service Juridique")
             };
         }
 

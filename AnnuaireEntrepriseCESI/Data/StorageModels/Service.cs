@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace AnnuaireEntrepriseCESI.Data.Models
+namespace AnnuaireEntrepriseCESI.Data.StorageModels
 {
     public class Service
     {
@@ -11,8 +11,9 @@ namespace AnnuaireEntrepriseCESI.Data.Models
 
         public Service(string name)
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Name = name;
         }
+
     }
 }
