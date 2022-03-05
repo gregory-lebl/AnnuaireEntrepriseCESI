@@ -17,7 +17,6 @@ namespace AnnuaireEntrepriseCESI
     public partial class MainWindow : Window
     {
         private readonly AnnuaireEntrepriseDbContext context = new AnnuaireEntrepriseDbContext();
-        public bool connectedAsAdmin = true;
 
         public MainWindow()
         {
@@ -25,16 +24,6 @@ namespace AnnuaireEntrepriseCESI
             FillDataGrid();
             SearchSelectorService.ItemsSource = context.Service.ToList();
             SearchSelectorSite.ItemsSource = context.Site.ToList();
-
-            if (connectedAsAdmin == true)
-            {
-
-                EnableAdminBtn();
-            }
-            else
-            {
-                DisabledAdminBtn();
-            }
         }
 
         private void AdminLogin(object sender, KeyEventArgs e)
@@ -42,38 +31,9 @@ namespace AnnuaireEntrepriseCESI
 
             if(e.Key == Key.F11)
             {
-                var window = new AdminAuthentification();
+                AdminAuthentification window = new AdminAuthentification();
                 window.Show();
             }
-        }
-
-        private void EnableAdminBtn()
-        {
-            AddEmployBtn.Visibility = Visibility.Visible;
-            UpdateEmployeBtn.Visibility = Visibility.Visible;
-            DeleteEmployeBtn.Visibility = Visibility.Visible;
-
-            AddServiceBtn.Visibility = Visibility.Visible;
-            UpdateServiceBtn.Visibility = Visibility.Visible;
-            DeleteServiceBtn.Visibility = Visibility.Visible;
-
-            AddSiteBtn.Visibility = Visibility.Visible;
-            UpdateSiteBtn.Visibility = Visibility.Visible;
-            DeleteSiteBtn.Visibility = Visibility.Visible;
-        }
-        private void DisabledAdminBtn()
-        {
-            AddEmployBtn.Visibility = Visibility.Hidden;
-            UpdateEmployeBtn.Visibility = Visibility.Hidden;
-            DeleteEmployeBtn.Visibility = Visibility.Hidden;
-
-            AddServiceBtn.Visibility = Visibility.Hidden;
-            UpdateServiceBtn.Visibility = Visibility.Hidden;
-            DeleteServiceBtn.Visibility = Visibility.Hidden;
-
-            AddSiteBtn.Visibility = Visibility.Hidden;
-            UpdateSiteBtn.Visibility = Visibility.Hidden;
-            DeleteSiteBtn.Visibility = Visibility.Hidden;
         }
 
         /// <summary>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="AnnuaireEntrepriseCESI.Views.AdminViews.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnnuaireEntrepriseCESI.Views.AdminViews"
+        mc:Ignorable="d"
+        Title="AdminPanel" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="AddEmployBtn" Content="Ajouter un employé" HorizontalAlignment="Left" Margin="37,24,0,0" VerticalAlignment="Top" Height="23" Width="140" Click="AddEmployBtn_Click"/>
+        <Button x:Name="UpdateEmployeBtn" Content="Modifier un employé" HorizontalAlignment="Left" Margin="37,55,0,0" VerticalAlignment="Top" Height="23" Width="140"/>
+        <Button x:Name="DeleteEmployeBtn" Content="Supprimer un employé" HorizontalAlignment="Left" Margin="37,84,0,0" VerticalAlignment="Top" Height="23" Width="140"/>
+
+        <Button x:Name="AddServiceBtn" Content="Ajouter un service" HorizontalAlignment="Left" Margin="239,27,0,0" VerticalAlignment="Top" Height="23" Width="121"/>
+        <Button x:Name="UpdateServiceBtn" Content="Modifier un service" HorizontalAlignment="Left" Margin="239,57,0,0" VerticalAlignment="Top" Height="23" Width="121"/>
+        <Button x:Name="DeleteServiceBtn" Content="Supprimer un service" HorizontalAlignment="Left" Margin="239,85,0,0" VerticalAlignment="Top" Height="23" Width="121"/>
+
+        <Button x:Name="AddSiteBtn" Content="Ajouter un site" HorizontalAlignment="Left" Margin="400,27,0,0" VerticalAlignment="Top" Height="23" Width="121" />
+        <Button x:Name="UpdateSiteBtn" Content="Modifier un site" HorizontalAlignment="Left" Margin="400,57,0,0" VerticalAlignment="Top" Height="23" Width="121" />
+        <Button x:Name="DeleteSiteBtn" Content="Supprimer un site" HorizontalAlignment="Left" Margin="400,85,0,0" VerticalAlignment="Top" Height="23" Width="121" />
+
+    </Grid>
+</Window>

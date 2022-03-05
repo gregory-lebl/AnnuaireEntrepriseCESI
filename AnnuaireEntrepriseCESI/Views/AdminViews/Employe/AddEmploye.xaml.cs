@@ -52,6 +52,7 @@ namespace AnnuaireEntrepriseCESI.Views
                 context.SaveChanges();
 
                 MessageBox.Show("Nouvel employé créé", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
+                Close();
             }
         }
     }
