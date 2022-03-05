@@ -1,21 +1,12 @@
 ﻿using AnnuaireEntrepriseCESI.Data;
-using AnnuaireEntrepriseCESI.Data.Models;
+using AnnuaireEntrepriseCESI.Data.StorageModels;
 using AnnuaireEntrepriseCESI.Data.ViewModels;
 using AnnuaireEntrepriseCESI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AnnuaireEntrepriseCESI
 {
@@ -30,6 +21,8 @@ namespace AnnuaireEntrepriseCESI
         {
             InitializeComponent();
             FillDataGrid();
+            SearchSelectorService.ItemsSource = context.Service.ToList();
+            SearchSelectorSite.ItemsSource = context.Site.ToList();
         }
         /// <summary>
         /// Rempli la DataGrid avec la liste des employés
@@ -37,12 +30,23 @@ namespace AnnuaireEntrepriseCESI
         private void FillDataGrid()
         {
             List<Employe> employes = context.Employe.ToList();
+
+            DataGrid.ItemsSource = TransformStorageModelEmployeToEmployeViewModel(employes);
+
+        }
+        /// <summary>
+        /// Fait la transition entre le model de stockage Employe et le EmployeViewModel
+        /// </summary>
+        /// <param name="employes"></param>
+        /// <returns></returns>
+        private List<EmployeViewModel> TransformStorageModelEmployeToEmployeViewModel(List<Employe> employes)
+        {
             List<EmployeViewModel> employesViewModel = new List<EmployeViewModel>();
 
             foreach (var employe in employes)
             {
-                Site site = (Site)context.Site.Where(o => o.Id == employe.SiteId).First();
-                Service service = (Service)context.Service.Where(o => o.Id == employe.ServiceId).First();
+                Site site = context.Site.Where(o => o.Id == employe.SiteId).First();
+                Service service = context.Service.Where(o => o.Id == employe.ServiceId).First();
 
                 EmployeViewModel viewModel = new EmployeViewModel(
                     employe.FirstName,
@@ -56,8 +60,43 @@ namespace AnnuaireEntrepriseCESI
                 employesViewModel.Add(viewModel);
             }
 
-            DataGrid.ItemsSource = employesViewModel;
+            return employesViewModel;
+        }
+        private void BtnSearchEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            List<EmployeViewModel> viewModel = new List<EmployeViewModel>();
 
+            if (!string.IsNullOrEmpty(InputSearchEmploye.Text))
+            {
+                string Name = InputSearchEmploye.Text;
+                List<Employe> employes = context.Employe.Where(o => o.LastName == Name).ToList();
+
+                viewModel = TransformStorageModelEmployeToEmployeViewModel(employes);
+            }
+            else
+            {
+                if (SearchSelectorService.SelectedValue is Service)
+                {
+                    Service serviceSelector = (Service)SearchSelectorService.SelectedItem;
+                    Guid serviceId = serviceSelector.Id;
+                    List<Employe> employes = context.Employe.Where(o => o.ServiceId == serviceId).ToList();
+
+                    viewModel = TransformStorageModelEmployeToEmployeViewModel(employes);
+                }
+                else
+                {
+                    if (SearchSelectorSite.SelectedValue is Site)
+                    {
+                        Site siteSelector = (Site)SearchSelectorSite.SelectedValue;
+                        Guid siteId = siteSelector.Id;
+                        List<Employe> employes = context.Employe.Where(o => o.SiteId == siteId).ToList();
+
+                        viewModel = TransformStorageModelEmployeToEmployeViewModel(employes);
+                    }
+                }
+            }
+
+            DataGrid.ItemsSource = viewModel;
         }
 
         private void AddEmployBtn_Click(object sender, RoutedEventArgs e)
@@ -74,6 +113,31 @@ namespace AnnuaireEntrepriseCESI
         private void DeleteEmploye_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void RefreshEmployesDataGrid_Click(object sender, RoutedEventArgs e)
+        {
+            FillDataGrid();
+        }
+
+        private void ResetSearchFilter()
+        {
+            SearchSelectorService.ItemsSource = null;
+            SearchSelectorSite.ItemsSource = null;
+
+            SearchSelectorService.Items.Clear();
+            SearchSelectorSite.Items.Clear();
+
+            SearchSelectorService.ItemsSource = context.Service.ToList();
+            SearchSelectorSite.ItemsSource = context.Site.ToList();
+
+            InputSearchEmploye.Clear();
+        }
+
+        private void BtnResetSearch_Click(object sender, RoutedEventArgs e)
+        {
+            ResetSearchFilter();
+            FillDataGrid();
         }
     }
 }

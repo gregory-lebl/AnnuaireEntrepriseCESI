@@ -1,5 +1,5 @@
 ﻿using AnnuaireEntrepriseCESI.Data;
-using AnnuaireEntrepriseCESI.Data.Models;
+using AnnuaireEntrepriseCESI.Data.StorageModels;
 using System;
 using System.Linq;
 using System.Windows;
@@ -32,7 +32,6 @@ namespace AnnuaireEntrepriseCESI.Views
                 SiteSelector.SelectedValue.ToString() != null
             )
             {
-
                 Service serviceSelector = (Service)ServiceSelector.SelectedItem;
                 Guid serviceId = serviceSelector.Id;
 

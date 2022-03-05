@@ -1,6 +1,5 @@
-﻿using AnnuaireEntrepriseCESI.Data.Models;
+﻿using AnnuaireEntrepriseCESI.Data.StorageModels;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 
 namespace AnnuaireEntrepriseCESI.Data

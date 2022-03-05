@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Annuaire d'entreprise" Height="900" Width="1600">
     <Grid>
-        <Button x:Name="AddEmployBtn" Content="Ajouter un employé" HorizontalAlignment="Left" Margin="213,113,0,0" VerticalAlignment="Top" Height="23" Width="73" Click="AddEmployBtn_Click"/>
+        <Button x:Name="AddEmployBtn" Content="Ajouter un employé" HorizontalAlignment="Left" Margin="78,55,0,0" VerticalAlignment="Top" Height="23" Width="121" Click="AddEmployBtn_Click"/>
         <DataGrid x:Name="DataGrid" Grid.Row="1" Background="#FFE2E2E2" IsReadOnly="True" AutoGenerateColumns="False" Margin="0,177,0,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1.5*" Header="Nom" Binding="{Binding Path=LastName}"></DataGridTextColumn>
@@ -38,5 +38,14 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="RefreshEmployesDataGrid" Content="Rafraichir la liste des employés" HorizontalAlignment="Left" Margin="226,55,0,0" VerticalAlignment="Top" Height="23" Width="179" Click="RefreshEmployesDataGrid_Click"/>
+        <Label Content="Recherche un employé par son nom" HorizontalAlignment="Left" Margin="491,34,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="InputSearchEmploye" HorizontalAlignment="Left" Margin="491,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
+        <Label Content="Afficher les employés par service" HorizontalAlignment="Left" Margin="785,32,0,0" VerticalAlignment="Top" Width="201"/>
+        <ComboBox x:Name="SearchSelectorService" HorizontalAlignment="Left" Margin="785,58,0,0" VerticalAlignment="Top" Width="201" DisplayMemberPath="Name" SelectedValue="Id"/>
+        <Label Content="Afficher les employés par site" HorizontalAlignment="Left" Margin="1026,32,0,0" VerticalAlignment="Top" Width="201"/>
+        <ComboBox x:Name="SearchSelectorSite" HorizontalAlignment="Left" Margin="1026,58,0,0" VerticalAlignment="Top" Width="201" DisplayMemberPath="Name" SelectedValue="Id"/>
+        <Button x:Name="BtnSearchEmploye" Content="Rechercher" HorizontalAlignment="Left" Margin="1270,58,0,0" VerticalAlignment="Top" Click="BtnSearchEmploye_Click"/>
+        <Button x:Name="BtnResetSearch" Content="Effacer les filtres" HorizontalAlignment="Left" Margin="1359,59,0,0" VerticalAlignment="Top" Click="BtnResetSearch_Click"/>
     </Grid>
 </Window>
