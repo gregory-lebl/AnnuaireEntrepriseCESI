@@ -18,12 +18,18 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews
             AddEmploye window = new AddEmploye();
             window.Show();
         }
-        /*
-        private void DeleteEmployeBtn_Click(object sender, RoutedEventArgs e)
+
+        private void UpdateEmployeBtn_Click(object sender, RoutedEventArgs e)
         {
-            DeleteEmploye window = new DeleteEmploye();
+            UpdateEmploye window = new UpdateEmploye();
             window.Show();
         }
-        */
+        /*
+private void DeleteEmployeBtn_Click(object sender, RoutedEventArgs e)
+{
+   DeleteEmploye window = new DeleteEmploye();
+   window.Show();
+}
+*/
     }
 }

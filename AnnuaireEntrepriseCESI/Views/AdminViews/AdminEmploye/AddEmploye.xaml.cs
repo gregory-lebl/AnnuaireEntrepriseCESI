@@ -43,7 +43,7 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
                     InputCellPhoneNumber.Text,
                     InputFixePhoneNumber.Text,
                     InputEmail.Text,
-                    "Administrateur",
+                    "Visiteur",
                     serviceId,
                     siteId);
 

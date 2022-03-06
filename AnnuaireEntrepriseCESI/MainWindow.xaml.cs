@@ -61,6 +61,7 @@ namespace AnnuaireEntrepriseCESI
                 Service service = context.Service.Where(o => o.Id == employe.ServiceId).First();
 
                 EmployeViewModel viewModel = new EmployeViewModel(
+                    employe.Id,
                     employe.FirstName,
                     employe.LastName,
                     employe.CellPhoneNumber,
