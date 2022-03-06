@@ -20,7 +20,8 @@ namespace AnnuaireEntrepriseCESI.Views
         private void AdminLoginBtn_Click(object sender, RoutedEventArgs e)
         {
             string password = AdminPassword.Password.ToString();
-            Admin admin = context.Admin.Where(o => o.Password == password).Single();
+            string email = AdminEmail.Text;
+            Admin admin = context.Admin.Where(o => o.Password == password && o.Email == email).Single();
 
             if (admin is Admin)
             {

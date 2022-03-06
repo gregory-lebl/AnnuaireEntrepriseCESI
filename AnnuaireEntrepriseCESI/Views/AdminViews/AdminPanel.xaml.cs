@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye;
+using System.Windows;
 
 namespace AnnuaireEntrepriseCESI.Views.AdminViews
 {
@@ -17,5 +18,12 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews
             AddEmploye window = new AddEmploye();
             window.Show();
         }
+        /*
+        private void DeleteEmployeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteEmploye window = new DeleteEmploye();
+            window.Show();
+        }
+        */
     }
 }

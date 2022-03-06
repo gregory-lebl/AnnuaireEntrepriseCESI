@@ -4,14 +4,13 @@ using System;
 using System.Linq;
 using System.Windows;
 
-namespace AnnuaireEntrepriseCESI.Views
+namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
 {
     /// <summary>
     /// Logique d'interaction pour AddEmploye.xaml
     /// </summary>
     public partial class AddEmploye : Window
     {
-
         private readonly AnnuaireEntrepriseDbContext context = new AnnuaireEntrepriseDbContext();
         public AddEmploye()
         {
@@ -39,8 +38,8 @@ namespace AnnuaireEntrepriseCESI.Views
                 Guid siteId = siteSelector.Id;
 
                 Employe addEmploye = new Employe(
-                    InputFirstName.Text, 
-                    InputLastName.Text, 
+                    InputFirstName.Text,
+                    InputLastName.Text,
                     InputCellPhoneNumber.Text,
                     InputFixePhoneNumber.Text,
                     InputEmail.Text,

@@ -9,8 +9,8 @@
 
     <Grid>
         <Label Content="Utilisateur" HorizontalAlignment="Center" Margin="0,123,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="AdminUser"  HorizontalAlignment="Center" Margin="0,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Mot de pass" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AdminEmail"  HorizontalAlignment="Center" Margin="0,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Mot de passe" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top"/>
         <PasswordBox x:Name="AdminPassword" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="AdminLoginBtn" Content="Se connecter" HorizontalAlignment="Left" Margin="187,252,0,0" VerticalAlignment="Top" Click="AdminLoginBtn_Click"/>
     </Grid>

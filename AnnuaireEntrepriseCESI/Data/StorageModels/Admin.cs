@@ -11,7 +11,7 @@ namespace AnnuaireEntrepriseCESI.Data.StorageModels
         [Required]
         public string Password { get; set; }
 
-        public Admin(string email,string password)
+        public Admin(string email, string password)
         {
             Id = Guid.NewGuid();
             Email = email;

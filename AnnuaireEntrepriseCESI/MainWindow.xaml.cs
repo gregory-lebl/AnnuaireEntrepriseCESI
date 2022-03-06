@@ -29,7 +29,7 @@ namespace AnnuaireEntrepriseCESI
         private void AdminLogin(object sender, KeyEventArgs e)
         {
 
-            if(e.Key == Key.F11)
+            if (e.Key == Key.F11)
             {
                 AdminAuthentification window = new AdminAuthentification();
                 window.Show();
@@ -109,22 +109,6 @@ namespace AnnuaireEntrepriseCESI
             }
 
             DataGrid.ItemsSource = viewModel;
-        }
-
-        private void AddEmployBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new AddEmploye();
-            window.Show();
-        }
-
-        private void UpdateEmploye_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DeleteEmploye_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void RefreshEmployesDataGrid_Click(object sender, RoutedEventArgs e)
