@@ -27,8 +27,16 @@
                 <DataGridTextColumn x:Name="Email" Width="2*" Header="Adresse mail" Binding="{Binding Path=Email}"></DataGridTextColumn>
                 <DataGridTextColumn x:Name="ServiceName" Width="1.5*" Header="Services" Binding="{Binding Path=ServiceName}"></DataGridTextColumn>
                 <DataGridTextColumn x:Name="SiteName" Width="1*" Header="Site" Binding="{Binding Path=SiteName}"></DataGridTextColumn>
+                <DataGridTemplateColumn x:Name="ColumnUpdate" Header="Modifier"  Width="1*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="UpdateEmploye" FontSize="14" Background="#FFF1DE1F" Foreground="Black" Click="UpdateEmploye_Click">
+                                <TextBlock Text="Modifier" ></TextBlock>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="BtnUpdateEmploye" Content="Enregistrer les modifications" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top" Click="BtnUpdateEmploye_Click"/>
     </Grid>
 </Window>

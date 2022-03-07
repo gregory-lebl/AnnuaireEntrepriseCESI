@@ -52,6 +52,17 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
             return employesViewModel;
         }
 
+        private Guid GetServiceIdFromServiceName(string ServiceName)
+        {
+            Service service = context.Service.Where(o => o.Name == ServiceName).First();
+            return service.Id;
+        }
+        private Guid GetSiteIdFromSiteName(string SiteName)
+        {
+            Site site = context.Site.Where(o => o.Name == SiteName).First();
+            return site.Id;
+        }
+
         private void SearchEmployeBtn_Click(object sender, RoutedEventArgs e)
         {
             List<EmployeViewModel> viewModel = new List<EmployeViewModel>();
@@ -89,9 +100,15 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
             DataGridEmploye.ItemsSource = viewModel;
         }
 
-        private void BtnUpdateEmploye_Click(object sender, RoutedEventArgs e)
+        private void UpdateEmploye_Click(object sender, RoutedEventArgs e)
         {
-            
+            var sender_context = sender as Button;
+            EmployeViewModel employe = (EmployeViewModel)sender_context!.DataContext;
+            Guid serviceId = GetServiceIdFromServiceName(employe.ServiceName);
+            Guid siteId = GetSiteIdFromSiteName(employe.SiteName);
+
+            var window = new UpdateOneEmploye(employe.LastName, employe.FirstName, employe.CellPhoneNumber, employe.FixePhoneNumber, employe.Email, serviceId, siteId);
+            window.Show();
         }
     }
 
