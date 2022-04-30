@@ -37,5 +37,35 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
         {
             return context.Service.Where(o => o.Id == id).First();
         }
+
+        private void BtnSaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            if (
+                InputEmployeFirstName.Text != null &&
+                InputEmployeLastName.Text != null &&
+                InputEmployeCellPhoneNumber.Text != null &&
+                InputEmployeFixePhoneNumber.Text != null &&
+                InputEmployeEmail.Text != null &&
+                ComboBoxService.SelectedValue.ToString() != null &&
+                ComboBoxSite.SelectedValue.ToString() != null
+            )
+            {
+                Service serviceSelector = (Service)ComboBoxService.SelectedItem;
+                Guid serviceId = serviceSelector.Id;
+
+                Site siteSelector = (Site)ComboBoxSite.SelectedValue;
+                Guid siteId = siteSelector.Id;
+
+                Employe employe = new Employe(
+                    InputEmployeFirstName.Text,
+                    InputEmployeLastName.Text,
+                    InputEmployeCellPhoneNumber.Text,
+                    InputEmployeFixePhoneNumber.Text,
+                    InputEmployeEmail.Text,
+                    "Visiteur",
+                    serviceId,
+                    siteId);
+            }
+        }
     }
 }
