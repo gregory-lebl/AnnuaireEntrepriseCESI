@@ -107,7 +107,7 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
             Guid serviceId = GetServiceIdFromServiceName(employe.ServiceName);
             Guid siteId = GetSiteIdFromSiteName(employe.SiteName);
 
-            var window = new UpdateOneEmploye(employe.LastName, employe.FirstName, employe.CellPhoneNumber, employe.FixePhoneNumber, employe.Email, serviceId, siteId);
+            var window = new UpdateOneEmploye(employe.Id,employe.LastName, employe.FirstName, employe.CellPhoneNumber, employe.FixePhoneNumber, employe.Email, serviceId, siteId);
             window.Show();
         }
     }

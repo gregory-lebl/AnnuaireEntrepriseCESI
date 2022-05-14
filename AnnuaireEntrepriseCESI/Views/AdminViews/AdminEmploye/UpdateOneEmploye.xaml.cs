@@ -12,22 +12,30 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
     public partial class UpdateOneEmploye : Window
     {
         private readonly AnnuaireEntrepriseDbContext context = new AnnuaireEntrepriseDbContext();
-        public UpdateOneEmploye(string lastname, string firstname, string cellPhone, string fixePhone, string email, Guid serviceId, Guid siteId)
+        public UpdateOneEmploye(Guid id, string lastname, string firstname, string cellPhone, string fixePhone, string email, Guid serviceId, Guid siteId)
         {
             InitializeComponent();
 
+            ComboBoxService.ItemsSource = context.Service.ToList();
+            ComboBoxSite.ItemsSource = context.Site.ToList();
+
             Service service = GetEmployeService(serviceId);
+            Site site = GetEmployeSite(siteId);
+
+            TextBlockEmployeId.Visibility = Visibility.Hidden;
+            TextBlockEmployeId.Text = id.ToString();
 
             InputEmployeLastName.Text = lastname;
             InputEmployeFirstName.Text = firstname;
             InputEmployeCellPhoneNumber.Text = cellPhone;
             InputEmployeFixePhoneNumber.Text = fixePhone;
             InputEmployeEmail.Text = email;
+            
             ComboBoxService.SelectedValue = service.Id;
-            ComboBoxSite.SelectedValue = siteId;
+            ComboBoxService.DisplayMemberPath = service.Name;
 
-            ComboBoxService.ItemsSource = context.Service.ToList();
-            ComboBoxSite.ItemsSource = context.Site.ToList();
+            ComboBoxSite.SelectedValue = site.Id;
+            ComboBoxSite.DisplayMemberPath = site.Name;
         }
         /// <summary>
         /// Récupère le service auquel l'employé est rattaché
@@ -36,6 +44,11 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
         private Service GetEmployeService(Guid id)
         {
             return context.Service.Where(o => o.Id == id).First();
+        }
+
+        private Site GetEmployeSite(Guid id)
+        {
+            return context.Site.Where(o => o.Id == id).First();
         }
 
         private void BtnSaveChanges_Click(object sender, RoutedEventArgs e)
@@ -56,15 +69,22 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye
                 Site siteSelector = (Site)ComboBoxSite.SelectedValue;
                 Guid siteId = siteSelector.Id;
 
-                Employe employe = new Employe(
-                    InputEmployeFirstName.Text,
-                    InputEmployeLastName.Text,
-                    InputEmployeCellPhoneNumber.Text,
-                    InputEmployeFixePhoneNumber.Text,
-                    InputEmployeEmail.Text,
-                    "Visiteur",
-                    serviceId,
-                    siteId);
+                //Si je sélectionne un service et un site dans la liste vide, ça fonctionne.
+                //Si je ne sélectionne pas de service ni de site dans la liste vide, j'ai une erreur comme quoi service et site sont null
+
+                Guid employeId = new Guid(TextBlockEmployeId.Text);
+                
+                Employe currentEmploye = (Employe)context.Employe.Where(o => o.Id == employeId);
+
+                currentEmploye.FirstName = InputEmployeFirstName.Text;
+                currentEmploye.LastName = InputEmployeLastName.Text;
+                currentEmploye.CellPhoneNumber = InputEmployeCellPhoneNumber.Text;
+                currentEmploye.FixePhoneNumber = InputEmployeFixePhoneNumber.Text;
+                currentEmploye.Email = InputEmployeEmail.Text;
+                currentEmploye.ServiceId = serviceId;
+                currentEmploye.SiteId = siteId;
+
+                context.SaveChanges();
             }
         }
     }

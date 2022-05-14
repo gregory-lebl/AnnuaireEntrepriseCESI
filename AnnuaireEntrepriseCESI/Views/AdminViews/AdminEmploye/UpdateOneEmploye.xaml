@@ -22,6 +22,7 @@
         <Label Content="Site" HorizontalAlignment="Left" Margin="250,298,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.523,0.541"/>
         <ComboBox x:Name="ComboBoxSite" HorizontalAlignment="Center" Margin="0,324,0,0" VerticalAlignment="Top" Width="300" DisplayMemberPath="Name" SelectedValue="Id"/>
         <Button x:Name="BtnSaveChanges" Content="Enregistrer les changements" HorizontalAlignment="Center" Margin="0,384,0,0" VerticalAlignment="Top" Click="BtnSaveChanges_Click"/>
+        <TextBlock x:Name="TextBlockEmployeId" HorizontalAlignment="Left" Margin="114,346,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
 
     </Grid>
