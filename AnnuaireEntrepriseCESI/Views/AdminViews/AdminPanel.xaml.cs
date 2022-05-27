@@ -1,5 +1,6 @@
 ﻿using AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye;
 using AnnuaireEntrepriseCESI.Views.AdminViews.AdminService;
+using AnnuaireEntrepriseCESI.Views.AdminViews.AdminSite;
 using System.Windows;
 
 namespace AnnuaireEntrepriseCESI.Views.AdminViews
@@ -41,6 +42,18 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews
         private void DeleteServiceBtn_Click(object sender, RoutedEventArgs e)
         {
             DeleteService window = new DeleteService();
+            window.Show();
+        }
+
+        private void AddSiteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddSite window = new AddSite();
+            window.Show();
+        }
+
+        private void DeleteSiteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteSite window = new DeleteSite();
             window.Show();
         }
     }
