@@ -11,9 +11,9 @@
         <Button x:Name="UpdateEmployeBtn" Content="Modifier un employé" HorizontalAlignment="Left" Margin="37,55,0,0" VerticalAlignment="Top" Height="23" Width="140" Click="UpdateEmployeBtn_Click"/>
         <Button x:Name="DeleteEmployeBtn" Content="Supprimer un employé" HorizontalAlignment="Left" Margin="37,84,0,0" VerticalAlignment="Top" Height="23" Width="140" Click="DeleteEmployeBtn_Click"/>
 
-        <Button x:Name="AddServiceBtn" Content="Ajouter un service" HorizontalAlignment="Left" Margin="239,27,0,0" VerticalAlignment="Top" Height="23" Width="121"/>
+        <Button x:Name="AddServiceBtn" Content="Ajouter un service" HorizontalAlignment="Left" Margin="239,27,0,0" VerticalAlignment="Top" Height="23" Width="121" Click="AddServiceBtn_Click"/>
         <Button x:Name="UpdateServiceBtn" Content="Modifier un service" HorizontalAlignment="Left" Margin="239,57,0,0" VerticalAlignment="Top" Height="23" Width="121"/>
-        <Button x:Name="DeleteServiceBtn" Content="Supprimer un service" HorizontalAlignment="Left" Margin="239,85,0,0" VerticalAlignment="Top" Height="23" Width="121"/>
+        <Button x:Name="DeleteServiceBtn" Content="Supprimer un service" HorizontalAlignment="Left" Margin="239,85,0,0" VerticalAlignment="Top" Height="23" Width="121" Click="DeleteServiceBtn_Click"/>
 
         <Button x:Name="AddSiteBtn" Content="Ajouter un site" HorizontalAlignment="Left" Margin="400,27,0,0" VerticalAlignment="Top" Height="23" Width="121" />
         <Button x:Name="UpdateSiteBtn" Content="Modifier un site" HorizontalAlignment="Left" Margin="400,57,0,0" VerticalAlignment="Top" Height="23" Width="121" />

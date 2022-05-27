@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="AddService" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Nom du service" HorizontalAlignment="Left" Margin="236,79,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ServiceName" HorizontalAlignment="Left" Margin="236,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="20"/>
+        <Label Content="Site auquel le service est rattaché" HorizontalAlignment="Left" Margin="236,155,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="SiteSelector" HorizontalAlignment="Left" Margin="236,186,0,0" VerticalAlignment="Top" Width="300" DisplayMemberPath="Name" SelectedValue="Id"/>
+        <Button x:Name="SaveService" Content="Enregistrer" HorizontalAlignment="Left" Margin="360,256,0,0" VerticalAlignment="Top" Click="SaveService_Click"/>
     </Grid>
 </Window>
