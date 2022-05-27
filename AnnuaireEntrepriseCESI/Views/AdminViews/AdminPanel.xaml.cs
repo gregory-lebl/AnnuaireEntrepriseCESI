@@ -24,12 +24,11 @@ namespace AnnuaireEntrepriseCESI.Views.AdminViews
             UpdateEmploye window = new UpdateEmploye();
             window.Show();
         }
-        /*
-private void DeleteEmployeBtn_Click(object sender, RoutedEventArgs e)
-{
-   DeleteEmploye window = new DeleteEmploye();
-   window.Show();
-}
-*/
+
+        private void DeleteEmployeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteEmploye window = new DeleteEmploye();
+            window.Show();
+        }
     }
 }

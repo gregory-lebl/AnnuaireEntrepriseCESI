@@ -1,0 +1,42 @@
+﻿<Window x:Class="AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye.DeleteEmploye"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye"
+        mc:Ignorable="d"
+        Title="DeleteEmploye" Height="900" Width="800">
+    <Grid>
+        <Label Content="Recherche un employé par nom" HorizontalAlignment="Left" Margin="313,31,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SearchEmployeName" HorizontalAlignment="Left" Margin="317,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+
+        <Label Content="Recherche un employé par service" HorizontalAlignment="Left" Margin="313,93,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="SearchEmployeService" HorizontalAlignment="Left" Margin="317,120,0,0" VerticalAlignment="Top" Width="178"/>
+
+        <Label Content="Rechercher un employé par site" HorizontalAlignment="Left" Margin="317,156,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="SearchEmployeSite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="319,182,0,0"/>
+        <Button x:Name="SearchEmployeBtn" Content="Rechercher" HorizontalAlignment="Left" Margin="382,230,0,0" VerticalAlignment="Top" Click="SearchEmployeBtn_Click"/>
+
+        <DataGrid x:Name="DataGridEmploye" Background="#FFE2E2E2" AutoGenerateColumns="False" Margin="0,323,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="EmployeId" Width="1.5*" Header="Id" Binding="{Binding Path=Id}" Visibility="Hidden"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="LastName" Width="1.5*" Header="Nom" Binding="{Binding Path=LastName}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="FirstName" Width="1.5*" Header="Prénom" Binding="{Binding Path=FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="CellPhoneNumber" Width="1.3*" Header="Téléphone portable" Binding="{Binding Path=CellPhoneNumber}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="FixePhoneNumber" Width="1.4*" Header="Téléphone fixe" Binding="{Binding Path=FixePhoneNumber}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Email" Width="2*" Header="Adresse mail" Binding="{Binding Path=Email}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="ServiceName" Width="1.5*" Header="Services" Binding="{Binding Path=ServiceName}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="SiteName" Width="1*" Header="Site" Binding="{Binding Path=SiteName}"></DataGridTextColumn>
+                <DataGridTemplateColumn x:Name="ColumnUpdate" Header="Modifier"  Width="1*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="DeleteEmploye" FontSize="14" Background="#DC143C" Foreground="White" Click="DeleteEmploye_Click">
+                                <TextBlock Text="Supprimer" ></TextBlock>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
