@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnnuaireEntrepriseCESI.Views.AdminViews.AdminEmploye"
         mc:Ignorable="d"
-        Title="UpdateEmploye" Height="900" Width="800">
+        Title="UpdateEmploye" Height="900" Width="1000">
     <Grid>
         <Label Content="Recherche un employé par nom" HorizontalAlignment="Left" Margin="313,31,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="SearchEmployeName" HorizontalAlignment="Left" Margin="317,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
